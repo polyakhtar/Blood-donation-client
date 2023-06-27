@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const MenuBar = () => {
+  const {user,logOut}=useContext(AuthContext);
+  const handleLogOut=()=>{
+logOut()
+.then(()=>{})
+
+  }
 const menu=<>
 <li><Link to='/'>Home</Link></li>
-<li><Link to='/'>Service</Link></li>
+<li><Link to='/donor'>Donor</Link></li>
+<li><Link to='blog'>Blog</Link></li>
+{
+  user?.email?
+  <>
+  <li><Link onClick={handleLogOut}><div className="avatar">
+  <div className="w-10 rounded-full">
+    <img src={user?.photoURL} alt="" />
+  </div>
+</div></Link></li>
+  </>
+  :
+  <li><Link to='/login'>Log in</Link></li>
+}
+
+
 </>
     return (
-      <div className="navbar bg-base-100 md:flex lg:flex md:justify-around lg:justify-around">
+      <div className="navbar bg-base-100 md:flex lg:flex md:justify-around lg:justify-around border-b-2">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
