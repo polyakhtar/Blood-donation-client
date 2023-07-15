@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginAnimation from '../../assets/login.json';
 import Lottie from 'lottie-react';
 import { useForm } from 'react-hook-form';
@@ -11,6 +11,9 @@ const Login = () => {
   const {register,formState: { errors },handleSubmit}=useForm();
   const [logInError,setLogInError]=useState('');
   const googleProvider=new GoogleAuthProvider();
+  const navigate=useNavigate();
+  const location=useLocation();
+  const from=location.state?.from?.pathname || '/';
   const handleLogIn=data=>{
     console.log(data)
     setLogInError('');
@@ -18,6 +21,7 @@ const Login = () => {
     .then(result=>{
       const user=result.user;
       console.log(user);
+      navigate(from,{replace:true})
       
      
     })
@@ -31,6 +35,7 @@ const handleGoogleSignIn=()=>{
   .then(result=>{
       const user=result.user;
       console.log(user);
+      navigate(from,{replace:true})
   })
   .catch(error=>{
       console.log(error)

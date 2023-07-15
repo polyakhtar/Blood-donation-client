@@ -1,47 +1,83 @@
 import React, { useEffect, useState } from 'react';
+import DonorNav from './DonorNav/DonorNav';
+import SideBar from './SideBar/SideBar';
+
 
 const Donor = () => {
-  const [query,setQuery]=useState('');
-  const [donors,setDonor]=useState([]);
-useEffect(()=>{
-    fetch('http://localhost:5000/donors')
+  
+
+  const [approvedDonor,setApprovedDonor]=useState([]);
+  useEffect(()=>{
+    fetch('http://localhost:5000/approveddoner')
     .then(res=>res.json())
     .then(data=>{
-        setDonor(data)
+      setApprovedDonor(data)
     })
-},[])
+  },[])
+  const [selectedBloodGroup,setSelectedBloodGroup]=useState(null);
+  // ======Input filter======
+  const [query,setQuery]=useState('');
+  const handleInputChange=event=>{
+    setQuery(event.target.value)
+  }
+  const filteredItems = approvedDonor.filter(
+    (donor) =>
+      donor.donorLocation.toLowerCase().includes(query.toLowerCase()) ||
+      donor.donorGroup.toLowerCase().includes(query.toLowerCase())
+  );
 
+  // ===== Radio filter ====
+  const handleChange=event=>{
+    setSelectedBloodGroup(event.target.value)
+  }
+  function filteredData(approvedDonors, selected, query) {
+    let filteredDonors = approvedDonors;
+  
+    // Filtering input items
+    if (query) {
+      filteredDonors = filteredDonors.filter(
+        (donor) =>
+          donor.donorLocation.toLowerCase().includes(query.toLowerCase()) ||
+          donor.donorGroup.toLowerCase().includes(query.toLowerCase())
+      );
+    }
+    if (selected) {
+      filteredDonors = filteredDonors.filter(
+        ({ donorLocation, donorGroup }) =>
+          donorLocation === selected || donorGroup === selected
+      );
+    }
+  
+    return filteredDonors;
+  }
+  const result=filteredData(approvedDonor,selectedBloodGroup,query)
 
-
-    return (          
-        <div>
-            <h1 className="text-4xl font-bold uppercase text-gray-600 font-Poppins text-center mt-10">Find your perfect donor</h1>
-            <section className="bg-white dark:bg-gray-900">
-        <div className="container px-6 py-6 mx-auto" style={{paddingLeft:'6%',paddingRight:'6%'}}>
-          <div className="mt-8 xl:mt-16 lg:flex lg:-mx-12">
-            <div className="lg:mx-12 px-4">
-              <h1 className="text-xl font-semibold text-gray-800 font-Poppins dark:text-white my-3">Filtering</h1>
-              <input type="text" placeholder='Search by Blood Group' className='search input input-bordered w-full border-gray-400' onChange={(e)=>setQuery(e.target.value)} />
-            </div>
-            <div className="flex-1 mt-8 lg:mx-12 lg:mt-0">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-                {
-                    donors.filter((donor)=>donor.group.toLowerCase().includes(query) || donor.location.toLowerCase().includes(query)).map(donor=>
-                    <div className='my-4'>
-                        <img className="object-cover w-full rounded-lg h-96 " src={donor.photo} alt="" />
-                        <h2 className="mt-4 text-xl font-bold text-gray-800 capitalize font-Poppins">Donor Name: {donor.name}</h2>
-                        <p className="mt-2 text-lg font-semibold uppercase font-Poppins ">Location: {donor.location}</p>
-                        <p className="mt-2 text-lg font-semibold uppercase font-Poppins">Blood Group: <span className='text-red-600'>{donor.group}</span> </p>
-                        <p className="mt-2 text-lg font-semibold uppercase  font-Poppins">Mobile No: {donor.number}</p>
+    return ( 
+      <div className='my-2'> 
+      <div className="flex flex-col md:flex-row">
+        <div className="bg-gray-200 w-1/4">
+      <SideBar handleChange={handleChange}></SideBar>    
+      </div>
+        <div className=''>
+        <DonorNav query={query} handleInputChange={handleInputChange}></DonorNav> 
+             <div className="p-6 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+                 {
+                    result.map((donor,i)=>
+                    <div key={i} className='my-4'>
+                        <img className="object-cover w-full rounded-lg h-96 " src={donor.donorPhoto} alt="" />
+                        <h2 className="mt-4 text-xl font-bold text-gray-800 capitalize font-Poppins">Donor Name: {donor.donorName}</h2>
+                        <p className="mt-2 text-lg font-semibold uppercase font-Poppins ">Location: {donor.donorLocation}</p>
+                        <p className="mt-2 text-lg font-semibold uppercase font-Poppins">Blood Group: <span className='text-red-600'>{donor.donorGroup}</span> </p>
+                        <p className="mt-2 text-lg font-semibold uppercase  font-Poppins">Mobile No: {donor.donorNumber}</p>
                       </div>)
-                }
+                } 
                 
-              </div>
-            </div>
-          </div>
+                
+              </div> 
         </div>
-      </section>
         </div>
+        </div>
+        
     );
 };
 

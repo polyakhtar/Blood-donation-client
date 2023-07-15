@@ -1,35 +1,38 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-
+import { FaUserCircle } from 'react-icons/fa';
+import ProfileModal from '../ProfileModal/ProfileModal';
 const MenuBar = () => {
   const {user,logOut}=useContext(AuthContext);
   const handleLogOut=()=>{
-logOut()
-.then(()=>{})
+    logOut()
+    .then(()=>{
 
+    })
+    .catch(error=>console.error(error))
   }
-const menu=<>
-<li><Link to='/'>Home</Link></li>
-<li><Link to='/donor'>Donor</Link></li>
-<li><Link to='blog'>Blog</Link></li>
-{
-  user?.email?
-  <>
-  <li><Link onClick={handleLogOut}><div className="avatar">
-  <div className="w-10 rounded-full">
-    <img src={user?.photoURL} alt="" />
-  </div>
-</div></Link></li>
-  </>
-  :
-  <li><Link to='/login'>Log in</Link></li>
-}
-
-
-</>
+ 
+  const menu = (
+    <>
+      <li><Link to='/'>Home</Link></li>
+      <li><Link to='/donor'>Donor</Link></li>
+      <li><Link to='blog'>Blog</Link></li>
+      <li><Link to='/contact'>Contact</Link></li>
+      <li><Link to='/aboutUs'>About Us</Link></li>
+      <li><Link to='/dashboard'>Dashboard</Link></li>
+      {
+        user?.email ?
+          <>
+            <li><button onClick={()=>handleLogOut()}>Log Out</button></li>
+          </>
+          :
+          <li><Link to='/login'>Log in</Link></li>
+      }
+    </>
+  );
     return (
-      <div className="navbar bg-base-100 md:flex lg:flex md:justify-around lg:justify-around border-b-2">
+      <div className="navbar bg-base-100 md:flex lg:flex md:justify-around lg:justify-around md:items-center lg:items-center border-b-2">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -40,8 +43,7 @@ const menu=<>
           </ul>
         </div>
         <Link to='/' className=" text-3xl font-bold font-Poppins flex items-center">
-          <p> <img style={{width:'70px',height:'70px'}}  src="https://cdn.vectorstock.com/i/preview-1x/23/27/blood-donation-logo-with-hearts-vector-27812327.webp" alt="" /></p>
-          <p>
+          <p className=''>
         <span className='text-red-500'>LIFE </span>   
          <span>SOURCE</span>
           </p>
@@ -53,6 +55,7 @@ const menu=<>
         </ul>
       </div>
     </div>
+   
     );
 };
 

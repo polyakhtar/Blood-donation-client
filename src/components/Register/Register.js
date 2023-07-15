@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import regiterAnimation from '../../assets/register.json'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
@@ -14,6 +14,10 @@ const {createUser,updateUser,googleSignIn}=useContext(AuthContext);
 const {register,reset,formState: { errors },handleSubmit}=useForm();
 const [signUpError,setSignUpError]=useState('');
 const googleProvider=new GoogleAuthProvider();
+const navigate=useNavigate();
+const location=useLocation();
+const from=location.state?.from?.pathname || '/';
+
 const handleRegister=data=>{
 createUser(data.email,data.password)
 .then(result=>{
@@ -25,15 +29,16 @@ createUser(data.email,data.password)
   }
 updateUser(userInfo)
 .then(()=>{
-  saveUser(data.name,data.email,data.photo)
+  saveUser(data.name,data.email,data.photo);
+  navigate(from,{replace:true})
+  
 })
 .catch(err=>console.log(err))
 })
 .catch(error=>{
   setSignUpError(error.message)
 })
-signUpError('')
-.catch(error=>console.error(error))
+setSignUpError('');
 }
 const handleGoogleSignIn=()=>{
   googleSignIn(googleProvider)
@@ -41,6 +46,7 @@ const handleGoogleSignIn=()=>{
       const user=result.user;
       console.log(user);
       saveUser(user.displayName,user.email,user.photoURL);
+      navigate(from,{replace:true})
   })
   .catch(error=>{
       console.log(error)

@@ -1,4 +1,5 @@
 import React from 'react';
+import { BiDonateBlood } from 'react-icons/bi';
 
 
 
@@ -8,6 +9,11 @@ const CampaignGellery = ()=> {
         <div className='my-28' style={{paddingLeft:'8%',paddingRight:'8%'}}>
             <div className='text-center'>
             <h1 className="text-5xl font-bold text-gray-600 font-Poppins">CAMPAIGN GALLERY</h1>
+            <div className="flex justify-center items-center mx-auto my-6">
+            <span className="inline-block w-28 h-1 bg-red-500  mx-1 rounded-full" />
+              <span className=' mx-1 text-2xl text-red-500'> <BiDonateBlood></BiDonateBlood></span>
+              <span className="inline-block w-28 h-1 bg-red-500  mx-1 rounded-full" />
+            </div>
             <p className='text-gray-600 font-Poppins text-xl my-4'>Latest news and statements regarding giving blood processing
          </p>
          </div>

@@ -1,10 +1,16 @@
 import React from 'react';
+import { BiDonateBlood } from 'react-icons/bi';
 
 const DonateProcess = () => {
     return (
         <div className='my-20'>
             <div className='text-center'>
             <h1 className='text-5xl font-bold text-gray-600 font-Poppins'>DONATION PROCESS</h1>
+            <div className="flex justify-center items-center mx-auto my-6">
+            <span className="inline-block w-28 h-1 bg-red-500  mx-1 rounded-full" />
+              <span className=' mx-1 text-2xl text-red-500'> <BiDonateBlood></BiDonateBlood></span>
+              <span className="inline-block w-28 h-1 bg-red-500  mx-1 rounded-full" />
+            </div>
             <p className='text-gray-600 font-Poppins text-xl my-2'>The donation process from the time you arrive center until the time you leave
            </p>
            </div>

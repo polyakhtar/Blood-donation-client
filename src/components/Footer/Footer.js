@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer grid-rows-2 p-10 bg-neutral text-neutral-content">
+        <footer className="footer grid-rows-2 p-10 text-neutral-content" style={{backgroundColor:'#1B1B1A'}}>
   <div>
     <span className="footer-title">Services</span> 
     <a className="link link-hover">Branding</a> 

@@ -5,6 +5,8 @@ import Campaign from './Campaign/Campaign';
 import CampaignGellery from './CampaignGellery/CampaignGellery';
 import BeDonor from './BeDonor/BeDonor';
 import Counter from './Counter/Counter';
+import Review from './Review/Review';
+import Subscribe from './Subscribe/Subscribe';
 
 const Home = () => {
     return (
@@ -15,6 +17,8 @@ const Home = () => {
             <CampaignGellery></CampaignGellery>
             <Counter></Counter>
             <BeDonor></BeDonor>
+            <Review></Review>
+             <Subscribe></Subscribe> 
         </div>
     );
 };
