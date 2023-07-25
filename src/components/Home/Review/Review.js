@@ -7,8 +7,8 @@ const Review = () => {
   };
    
     return (
-      <div className='my-20'>
-         <h1 className='text-3xl font-bold font-Poppins text-red-600 text-center mt-10 mb-6'>Donor And Recipient Opinion</h1>
+      <div className='lg:my-20'>
+         <h1 className='lg:text-4xl text-3xl font-bold font-Poppins text-gray-600 text-center mt-10 mb-6'>Donor And Recipient Opinion</h1>
     <div className="w-full bg-cover flex flex-col items-center justify-center text-center" style={backgroundStyle}>
       <div className='w-full h-full py-10 bg-black/40'>
    

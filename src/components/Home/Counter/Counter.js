@@ -54,7 +54,7 @@ const Counter = () => {
     setIsHoverd(false);
   };
   return (
-    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='container mx-auto my-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8' style={{paddingLeft:'8%',paddingRight:'8%'}}>
+    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='container mx-auto lg:my-20 my-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8' style={{paddingLeft:'8%',paddingRight:'8%'}}>
         <div className='w-full max-w-sm overflow-hidden rounded-lg shadow-lg  text-center py-10 px-3 bg-red-50'>
       <div className='text-5xl flex items-center justify-center my-6 hover:text-red-500 hover:translate-y-[-10px] transition duration-300 '><FaHeartbeat></FaHeartbeat></div>  
       <h1 className='text-4xl font-Poppins  font-semibold my-3 text-red-500'> {count}</h1>

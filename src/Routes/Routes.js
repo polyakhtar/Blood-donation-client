@@ -15,6 +15,7 @@ import BlogDetails from "../components/Blog/BlogDetails/BlogDetails";
 import Contact from "../components/Contact/Contact";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Payment from "../components/Payment/Payment";
+import PaymentUser from "../components/Dashboard/PaymentUser/PaymentUser";
 
 
 const router=createBrowserRouter([
@@ -77,6 +78,10 @@ const router=createBrowserRouter([
                     {
                         path:'/dashboard/addreview',
                         element:<AddReview></AddReview>
+                    },
+                    {
+                        path:'/dashboard/paymentuser',
+                        element:<PaymentUser></PaymentUser>
                     }
                 ]
             }

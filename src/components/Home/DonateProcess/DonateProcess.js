@@ -3,18 +3,18 @@ import { BiDonateBlood } from 'react-icons/bi';
 
 const DonateProcess = () => {
     return (
-        <div className='my-20'>
+        <div className='lg:my-20 my-12'>
             <div className='text-center'>
-            <h1 className='text-5xl font-bold text-gray-600 font-Poppins'>DONATION PROCESS</h1>
-            <div className="flex justify-center items-center mx-auto my-6">
+            <h1 className='lg:text-4xl text-3xl font-bold text-gray-600 font-Poppins'>DONATION PROCESS</h1>
+            <div className="flex justify-center items-center mx-auto my-4">
             <span className="inline-block w-28 h-1 bg-red-500  mx-1 rounded-full" />
               <span className=' mx-1 text-2xl text-red-500'> <BiDonateBlood></BiDonateBlood></span>
               <span className="inline-block w-28 h-1 bg-red-500  mx-1 rounded-full" />
             </div>
-            <p className='text-gray-600 font-Poppins text-xl my-2'>The donation process from the time you arrive center until the time you leave
+            <p className='text-gray-600 font-Poppins text-xl my-2 lg:px-0 px-2'>The donation process from the time you arrive center until the time you leave
            </p>
            </div>
-           <div className='container mx-auto my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4' style={{paddingLeft:'6%',paddingRight:'6%'}}>
+           <div className='container mx-auto lg:my-16 my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4' style={{paddingLeft:'6%',paddingRight:'6%'}}>
            <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
         <img className="object-cover object-center w-full h-56" src="https://images.unsplash.com/photo-1517817748493-49ec54a32465?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVnaXN0ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="avatar" />
         <div className="flex items-center px-6 py-3 bg-gray-900">

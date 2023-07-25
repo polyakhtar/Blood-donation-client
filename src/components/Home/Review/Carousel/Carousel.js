@@ -18,12 +18,12 @@ const Carousel = () => {
 
   return (
     <div className='mt-6'>
-      <div className="carousel w-4/5 bg-white py-6 rounded-lg">
+      <div className="carousel w-4/5 lg:px-4 px-8  bg-white py-6 rounded-lg">
         {reviews.map((review, index) => (
           <div
             key={review._id}
             id={review._id}
-            className={`carousel-item px-3 w-full text-center block p-6 ${
+            className={`carousel-item  w-full text-center block p-6 ${
               activeItem === index ? 'active' : ''
             }`}
           >

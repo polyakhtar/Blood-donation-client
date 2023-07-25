@@ -5,8 +5,7 @@ import Location from './Location/Location';
 const SideBar = ({handleChange}) => {
     
     return (
-        <div className='h-100 flex flex-col items-center z-1 p-4'>
-            <h1>SideBar</h1>
+        <div className='lg:h-100 lg:flex-col flex justify-around py-4 lg:mx-10'>
             <BloodGroup handleChange={handleChange}></BloodGroup>
             <Location handleChange={handleChange}></Location>
         </div>

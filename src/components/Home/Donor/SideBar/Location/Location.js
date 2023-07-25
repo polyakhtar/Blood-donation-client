@@ -3,10 +3,10 @@ import Input from '../../Input/Input';
 
 const Location = ({handleChange}) => {
     return (
-        <div className='mr-10'>
-            <h1 className='text-2xl font-semibold mb-2'>Locaton</h1>
+        <div className='lg:p-4'>
+            <h1 className='lg:text-2xl text-xl font-semibold text-red-500 lg:mb-2'>Locaton</h1>
             <div className='flex flex-col'>
-            <label>
+            <label className='font-semibold'>
                 <input onChange={handleChange} type="radio" value="" name="test1" />
                 <span></span>All
                </label>

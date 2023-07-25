@@ -4,14 +4,14 @@ import Input from '../../Input/Input';
 const BloodGroup = ({handleChange}) => {
     // console.log(handleChange)
     return (
-        <div>
-            <h1 className='text-2xl font-semibold mb-2'>Blood Group</h1>
+        <div className='lg:p-6'>
+            <h1 className='lg:text-2xl text-xl text-red-500 font-semibold lg:mb-2'>Blood Group </h1>
             <div className='flex flex-col'>
-               <label>
-                <input onChange={handleChange} type="radio" value="" name="bloodGroup" />
+            <label className='font-semibold'>
+                <input onChange={handleChange} type="radio" value="" name="test" />
                 <span></span>All
                </label>
-               <Input 
+               <Input
                handleChange={handleChange}
                value='A+'
                title="A+"

@@ -3,13 +3,13 @@ import { FaClock, FaLocationArrow } from 'react-icons/fa';
 
 const Campaign = () => {
     return (
-        <section className="bg-white dark:bg-gray-900 my-12" style={{paddingLeft:'8%',paddingRight:'8%'}}>
-        <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-5xl font-bold text-gray-600 font-Poppins">OUR CAMPAIGNS</h1>
+        <section className="bg-white dark:bg-gray-900 lg:my-12" style={{paddingLeft:'8%',paddingRight:'8%'}}>
+        <div className="container px-6 lg:py-10 mx-auto">
+          <h1 className="lg:text-4xl text-3xl font-bold text-gray-600 font-Poppins">OUR CAMPAIGNS</h1>
           <div className="">
-              <span className="inline-block w-72 h-1 bg-red-500 rounded-full" />
-              <span className="inline-block w-16 h-1 mx-1 bg-red-500 rounded-full" />
-              <span className="inline-block w-4 h-1 bg-red-500 rounded-full" />
+              <span className="inline-block lg:w-64 w-56 h-1 bg-red-500 rounded-full" />
+              <span className="inline-block lg:w-10 w-6 h-1 mx-1 bg-red-500 rounded-full" />
+              <span className="inline-block  lg:w-4 w-2 h-1 bg-red-500 rounded-full" />
             </div>
           <p className='text-gray-600 font-Poppins text-xl my-4'>Encourage new donors to join and continue to give blood. We have total sixty thousands donor centers and visit thousands of other venues on various occasions.
          </p>

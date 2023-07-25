@@ -32,7 +32,15 @@ useEffect(()=>{
         setLoading(false) ;
     })
     return ()=> unsubscribe()
-},[])
+},[]);
+const getToken = async () => {
+    if (user) {
+      const idToken = await user.getIdToken();
+      console.log('idtoken', idToken);
+      return idToken;
+    }
+    return null;
+  };
 const authInfo={
     user,
     createUser,
@@ -40,7 +48,8 @@ const authInfo={
     logIn,
     loading,
     googleSignIn,
-    logOut
+    logOut,
+    getToken
     
 }
     return (

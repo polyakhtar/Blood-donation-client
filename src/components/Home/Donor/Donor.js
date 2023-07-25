@@ -8,7 +8,7 @@ const Donor = () => {
 
   const [approvedDonor,setApprovedDonor]=useState([]);
   useEffect(()=>{
-    fetch('http://localhost:5000/approveddoner')
+    fetch('http://localhost:5000/approveddonor')
     .then(res=>res.json())
     .then(data=>{
       setApprovedDonor(data)
@@ -53,14 +53,14 @@ const Donor = () => {
   const result=filteredData(approvedDonor,selectedBloodGroup,query)
 
     return ( 
-      <div className='my-2'> 
+      <div className='overflow-x-hidden'> 
       <div className="flex flex-col md:flex-row">
-        <div className="bg-gray-200 w-1/4">
+        <div className="bg-gray-200 lg:w-1/4">
       <SideBar handleChange={handleChange}></SideBar>    
       </div>
-        <div className=''>
+        <div className='w-full'>
         <DonorNav query={query} handleInputChange={handleInputChange}></DonorNav> 
-             <div className="p-6 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+             <div className="p-6 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                  {
                     result.map((donor,i)=>
                     <div key={i} className='my-4'>

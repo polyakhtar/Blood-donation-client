@@ -3,7 +3,7 @@ import { FaRegHeart, FaUser } from 'react-icons/fa';
 
 const DonorNav = ({ query, handleInputChange }) => {
   return (
-    <nav className='flex border-b-2 items-center justify-between p-4 ml-4'>
+    <nav className='w-full flex border-b-2 items-center justify-between p-4'>
       <div>
         <input
           type='text'
@@ -14,10 +14,10 @@ const DonorNav = ({ query, handleInputChange }) => {
         />
       </div>
       <div className='flex gap-3 items-center'>
-        <a className='text-2xl'>
+        <a className='text-2xl text-red-500'>
           <FaRegHeart></FaRegHeart>
         </a>
-        <a className='text-2xl'>
+        <a className='text-2xl text-red-500'>
           <FaUser></FaUser>
         </a>
       </div>

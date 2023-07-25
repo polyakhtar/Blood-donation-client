@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Subscribe = () => {
+  const {user}=useContext(AuthContext);
     return (
         <div>
         <div className="container pb-14 mx-auto" style={{paddingLeft:'8%',paddingRight:'8%'}}>
@@ -9,11 +11,11 @@ const Subscribe = () => {
             <div className="w-full lg:w-1/2">
               <div className="lg:max-w-lg">
                 <h1 className="text-3xl font-semibold font-Poppins text-gray-800 dark:text-white lg:text-4xl">Subscribe To The <span className="text-red-500">Newsletter</span></h1>
-                <p className="mt-3 text-lg font-Poppins text-gray-600 dark:text-gray-400">Get updates about upcoming blood donation events, news, and more.</p>
-                <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">
-                  <input id="email" type="text" className="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300 font-Poppins" placeholder="Email Address" />
+                <p className="mt-3 text-xl font-Poppins text-gray-600 dark:text-gray-400">Get updates about upcoming blood donation events, news, and more.</p>
+                <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row items-center">
+                  <input id="email" type="text" className="px-5 py-1 text-gray-700 bg-white border rounded-md focus:border-red-500 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-red-300 font-Poppins" value={user?.email} placeholder="Email Address" />
                   <Link to={'/payment'}>
-                  <button className="w-full px-5 py-2 text-sm tracking-wider text-white uppercase transition-colors bg-red-500 rounded-lg lg:w-auto lg:mx-4 hover:bg-gray-600 font-Poppins">
+                  <button className="btn-sm text-sm tracking-wider text-white uppercase transition-colors bg-red-500 rounded-lg lg:w-auto lg:mx-4 hover:bg-gray-600 font-Poppins">
                     Subscribe
                   </button>
                   </Link>

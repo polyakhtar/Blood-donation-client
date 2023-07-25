@@ -6,19 +6,19 @@ import { BiDonateBlood } from 'react-icons/bi';
 
 const CampaignGellery = ()=> {
     return (
-        <div className='my-28' style={{paddingLeft:'8%',paddingRight:'8%'}}>
+        <div className='lg:my-24 my-10' style={{paddingLeft:'8%',paddingRight:'8%'}}>
             <div className='text-center'>
-            <h1 className="text-5xl font-bold text-gray-600 font-Poppins">CAMPAIGN GALLERY</h1>
-            <div className="flex justify-center items-center mx-auto my-6">
+            <h1 className="lg:text-4xl text-3xl font-bold text-gray-600 font-Poppins">CAMPAIGN GALLERY</h1>
+            <div className="flex justify-center items-center mx-auto lg:my-4">
             <span className="inline-block w-28 h-1 bg-red-500  mx-1 rounded-full" />
               <span className=' mx-1 text-2xl text-red-500'> <BiDonateBlood></BiDonateBlood></span>
               <span className="inline-block w-28 h-1 bg-red-500  mx-1 rounded-full" />
             </div>
-            <p className='text-gray-600 font-Poppins text-xl my-4'>Latest news and statements regarding giving blood processing
+            <p className='text-gray-600 font-Poppins text-xl my-2'>Latest news and statements regarding giving blood processing
          </p>
          </div>
-         <div className="container px-6 py-2 mx-auto">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 my-12">
+         <div className="container px-6 mx-auto">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 lg:my-12 my-8">
             <div>
          <img className="object-cover object-center w-full h-64 rounded-lg lg:h-80" src="https://templates.bwlthemes.com/blood_donation/v_2/images/gallery_1.jpg" alt="" />
          </div>
