@@ -78,8 +78,8 @@ const BlogDetails = () => {
         </div>
       </div>
 
-      <div className='w-4/5 mx-auto my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
-        <div className='flex justify-center '>
+      <div className='w-4/5 mx-auto my-20 grid grid-cols-1 lg:grid-cols-2'>
+        <div className='flex justify-center md:my-6'>
           <img className='' src={photo} alt="" />
         </div>
         <div className='ml-8 w-full'>

@@ -6,8 +6,8 @@ const Subscribe = () => {
   const {user}=useContext(AuthContext);
     return (
         <div>
-        <div className="container pb-14 mx-auto" style={{paddingLeft:'8%',paddingRight:'8%'}}>
-          <div className="items-center lg:flex">
+        <div className="container lg:pb-14 md:my-20 my-10 mx-auto" style={{paddingLeft:'8%',paddingRight:'8%'}}>
+          <div className="items-center lg:flex md:flex">
             <div className="w-full lg:w-1/2">
               <div className="lg:max-w-lg">
                 <h1 className="text-3xl font-semibold font-Poppins text-gray-800 dark:text-white lg:text-4xl">Subscribe To The <span className="text-red-500">Newsletter</span></h1>

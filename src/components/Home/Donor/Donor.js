@@ -54,7 +54,7 @@ const Donor = () => {
 
     return ( 
       <div className='overflow-x-hidden'> 
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col lg:flex-row">
         <div className="bg-gray-200 lg:w-1/4">
       <SideBar handleChange={handleChange}></SideBar>    
       </div>

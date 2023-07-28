@@ -16,6 +16,8 @@ import Contact from "../components/Contact/Contact";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Payment from "../components/Payment/Payment";
 import PaymentUser from "../components/Dashboard/PaymentUser/PaymentUser";
+import AdminRoute from "./AdminRoute/AdminRoute";
+
 
 
 const router=createBrowserRouter([
@@ -65,24 +67,25 @@ const router=createBrowserRouter([
             },
             {
                 path:'/dashboard',
-                element:<Dashboard></Dashboard>,
+                element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
                 children:[
                     {
                     path:'/dashboard/donor',
-                    element:<ApproveDonor></ApproveDonor>
+                    element:<AdminRoute><ApproveDonor></ApproveDonor></AdminRoute>
                     },
                     {
                         path:'/dashboard/addblog',
-                        element:<AddBlog></AddBlog>
+                        element:<AdminRoute><AddBlog></AddBlog></AdminRoute>
+                    },
+                    {
+                        path:'/dashboard/paymentuser',
+                        element:<AdminRoute><PaymentUser></PaymentUser></AdminRoute>
                     },
                     {
                         path:'/dashboard/addreview',
                         element:<AddReview></AddReview>
-                    },
-                    {
-                        path:'/dashboard/paymentuser',
-                        element:<PaymentUser></PaymentUser>
                     }
+                    
                 ]
             }
         ]

@@ -12,7 +12,7 @@ useEffect(()=>{
     })
 },[])
     return (
-        <div className='container my-16' style={{paddingLeft:'8%',paddingRight:'8%'}}>
+        <div className='container mx-auto my-16' style={{paddingLeft:'8%',paddingRight:'8%'}}>
             
              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 '>
              {

@@ -4,9 +4,9 @@ import DashboardLayOut from './DashboardLayOut/DashboardLayOut';
 
 const Dashboard = () => {
     return (
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col lg:flex-row">
         {/* সাইডবার */}
-        <div className="bg-gray-200 w-full md:w-1/4">
+        <div className="bg-gray-200 w-full lg:w-1/4">
           <DashboardRoutes></DashboardRoutes>
         </div>
   

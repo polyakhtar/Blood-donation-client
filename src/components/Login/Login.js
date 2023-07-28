@@ -42,18 +42,19 @@ const handleGoogleSignIn=()=>{
   })
 }
     return (
-        <section className="bg-red-200 dark:bg-gray-900" style={{paddingLeft:'4%',paddingRight:'4%'}}>
+        <section className="bg-pink-100" style={{paddingLeft:'4%',paddingRight:'4%'}}>
         <div className="container px-6 py-2 mx-auto  ">
           <div className="lg:flex lg:flex lg:items-center lg:gap-12">
             <div className="lg:w-1/2">
             <Lottie animationData={loginAnimation}></Lottie>
             </div>
             <div className="mt-8 lg:w-1/2 lg:mt-0">
-            <h1 className="text-3xl font-bold uppercase text-center text-gray-600 font-Poppins my-4">Log In Now</h1>
-            <div className="w-full lg:max-w-xl border border-2 p-12 rounded-lg">
+            <div className="w-full lg:max-w-xl border border-2 border-gray-300 p-6 rounded-lg">
               <form onSubmit={handleSubmit(handleLogIn)}>
+              <h1 className="text-3xl font-semibold uppercase text-center text-gray-600 font-Poppins my-8">Log In Now</h1>
               <div>
-  <div className=" relative flex items-center mt-4">
+            <div className=" relative flex items-center mt-4">
+  
               <span className="absolute">
                   <img src="https://cdn-icons-png.flaticon.com/128/646/646094.png" className="w-6 h-6 mx-3" alt="" />
               </span>

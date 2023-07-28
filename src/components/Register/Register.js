@@ -73,15 +73,16 @@ const saveUser=(name,email,photo)=>{
   })
 }
    return (
-        <section className="bg-red-200 dark:bg-gray-900" style={{paddingLeft:'8%',paddingRight:'8%'}}>
+        <section className="bg-pink-100 dark:bg-gray-900" style={{paddingLeft:'8%',paddingRight:'8%'}}>
         <div className="container px-6 py-16 mx-auto">
           <div className="lg:flex lg:flex lg:items-center lg:gap-12">
             <div className="lg:w-1/2">
             <Lottie animationData={regiterAnimation}></Lottie>
             </div>
             <div className="mt-8 w-full lg:w-1/2 lg:mt-0">
-            <h1 className="text-3xl font-bold uppercase text-center text-gray-600 font-Poppins my-4">Register Now</h1>
-              <div className='w-full lg:max-w-xl border border-2 p-12 rounded-lg'>
+            
+              <div className='w-full lg:max-w-xl border border-2 border-gray-300 p-6 rounded-lg'>
+              <h1 className="text-3xl font-semibold uppercase text-center text-gray-600 font-Poppins my-8">Register Now</h1>
 <form onSubmit={handleSubmit(handleRegister)}>
 <div>
 <div className=" relative flex items-center mt-4">
