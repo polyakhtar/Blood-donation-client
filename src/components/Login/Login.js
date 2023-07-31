@@ -15,15 +15,14 @@ const Login = () => {
   const location=useLocation();
   const from=location.state?.from?.pathname || '/';
   const handleLogIn=data=>{
-    console.log(data)
+    // console.log(data)
     setLogInError('');
     logIn(data.email,data.password)
     .then(result=>{
       const user=result.user;
-      console.log(user);
-      navigate(from,{replace:true})
+      // console.log(user);
       
-     
+          navigate(from,{replace:true})
     })
     .catch(error=>{
       console.log(error.message)
@@ -62,13 +61,17 @@ const handleGoogleSignIn=()=>{
               })} className="block w-full px-10 py-3 font-Poppins text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email" />
               </div>
               {errors.email && <p className='text-red-600'>{errors.email.message}</p>}
-</div>
+       </div>
+       <div>
                 <div className="relative flex items-center mt-4">
                   <span className="absolute">
                   <img src="https://cdn-icons-png.flaticon.com/128/3064/3064155.png" className="w-6 h-6 mx-3" alt="" />
                   </span>
-                  <input type="password" className="block w-full font-Poppins px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password" />
-                </div>
+                  <input type="password" {...register("password",{required:"Password is required",
+              })} className="block w-full px-10 py-3 font-Poppins text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password" />
+              </div>
+              {errors.email && <p className='text-red-600'>{errors.email.message}</p>}
+              </div>
                 <div className="mt-4 md:flex md:items-center my-2">
                   <button className="w-full px-6 py-2 text-sm font-medium font-Poppins tracking-wide text-white uppercase transition-colors duration-300 transform bg-gray-600 rounded-lg hover:bg-gray-700 mr-2 my-4">
                     Sign in

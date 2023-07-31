@@ -3,8 +3,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import Checkout from './Checkout/Checkout';
 import { BiDonateBlood } from 'react-icons/bi';
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
-// console.log(stripePromise);
+const stripePromise = loadStripe('pk_test_51M66GGIo1LJSizd51CmIIbHarkWWKxV7UIVaurOoaos2Lg5eMIdxD4UXeuzTUxLeN9VAZYRDuXjLOhBnSXv3jU4w00EccBroQF');
+console.log(stripePromise);
 const Payment = () => {
     const price=5;
     return (

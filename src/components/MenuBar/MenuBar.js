@@ -16,7 +16,12 @@ const MenuBar = () => {
   const handleModalToggle = () => {
     setIsModalOpen(!isModalOpen);
   };
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  // Step 4: Function to handle opening and closing of the dropdown menu
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -141,12 +146,51 @@ useEffect(() => {
   return (
     <div className="relative z-10">
     <div className="navbar lg:px-24 bg-base-100 md:flex lg:flex md:justify-around lg:justify-around md:items-center lg:items-center border-b-2">
-      <div className="navbar-start">
+      <div className="navbar-start flex items-center">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-          </label>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+          <button
+            className="block lg:hidden text-lg font-semibold font-Poppins text-black mr-2"
+            onClick={handleDropdownToggle}
+          >
+            {isDropdownOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            )}
+          </button>
+          {/* Step 5: Include the menu variable inside the dropdown-content */}
+          <ul
+            tabIndex={0}
+            className={`menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 ${
+              isDropdownOpen ? 'block' : 'hidden'
+            }`}
+          >
             {menu}
           </ul>
         </div>
@@ -165,11 +209,11 @@ useEffect(() => {
 
       {/* Step 4: Render the modal */}
       <div className="modal-container">
-      {user?.email && <Modal />}
+        {user?.email && <Modal />}
+      </div>
     </div>
-    </div>
-    </div>
-  );
+  </div>
+);
 };
 
 export default MenuBar;

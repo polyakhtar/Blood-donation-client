@@ -33,7 +33,7 @@ const DashboardRoutes = () => {
           </>
         )}
         <li>
-          <Link to='/dashboard/addreview' className={`block text-lg font-semibold font-Poppins ${isRouteActive('/dashboard/addreview') ? 'text-red-500' : 'text-black'}`}>Add Review</Link>
+          <Link to='/dashboard/addreview' className={`block text-lg font-semibold font-Poppins ${isRouteActive('/dashboard') ? 'text-red-500' : 'text-black'}`}>Add Review</Link>
         </li>
       </ul>
     </div>

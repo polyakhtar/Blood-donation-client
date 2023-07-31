@@ -17,6 +17,7 @@ import AboutUs from "../components/AboutUs/AboutUs";
 import Payment from "../components/Payment/Payment";
 import PaymentUser from "../components/Dashboard/PaymentUser/PaymentUser";
 import AdminRoute from "./AdminRoute/AdminRoute";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
 
@@ -24,6 +25,7 @@ const router=createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',
@@ -82,7 +84,7 @@ const router=createBrowserRouter([
                         element:<AdminRoute><PaymentUser></PaymentUser></AdminRoute>
                     },
                     {
-                        path:'/dashboard/addreview',
+                        path:'/dashboard',
                         element:<AddReview></AddReview>
                     }
                     

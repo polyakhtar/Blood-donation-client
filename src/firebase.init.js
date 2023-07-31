@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA6zjwTful2rri5ZD7xqxPBwgQb91_6P7Y",
-  authDomain: "blood-donation-43818.firebaseapp.com",
-  projectId: "blood-donation-43818",
-  storageBucket: "blood-donation-43818.appspot.com",
-  messagingSenderId: "347898351275",
-  appId: "1:347898351275:web:0bae5a980730e0c7d0f1ee"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain ,
+  projectId:process.env.REACT_APP_projectId ,
+  storageBucket:process.env.REACT_APP_storageBucket ,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId ,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase

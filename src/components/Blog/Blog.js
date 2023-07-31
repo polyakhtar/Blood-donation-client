@@ -18,7 +18,7 @@ useEffect(()=>{
              {
                 blogs.map((blog)=>
                 <Link to={`/blogdetails/${blog._id}`}>
-            <div className="card bg-base-100 shadow-xl">
+            <div key={blog._id} className="card bg-base-100 shadow-xl">
              <figure><img src={blog.photo} alt="Shoes" /></figure>
              <div className="card-body">
              <div className='flex items-center gap-2'>
