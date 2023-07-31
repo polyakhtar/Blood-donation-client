@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import './Banner.css';
 const Banner = () => {
     return (
@@ -17,7 +18,7 @@ const Banner = () => {
               </p>
               </div>
               </div>
-              <button className="w-2/5 px-5 py-2 mt-4 text-white capitalize transition-colors duration-300 transform bg-red-500 rounded-md lg:w-auto hover:bg-gray-700 focus:outline-none font-Poppins">DONATE NOW</button>
+              <button className="w-2/5 px-5 py-2 mt-4 text-white capitalize transition-colors duration-300 transform bg-red-500 rounded-md lg:w-auto hover:bg-gray-700 focus:outline-none font-Poppins"><Link to='/donor'>DONOR LIST</Link></button>
             </div>
           </div>
           </div>
