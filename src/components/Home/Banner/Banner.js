@@ -7,10 +7,10 @@ const Banner = () => {
           <div className="flex items-center justify-center w-full h-full bg-black/60">
             <div className="text-center ">
               <div className='lg:p-0 p-4'>
-              <h1 className="text-4xl font-bold text-white lg:text-5xl font-Poppins">DONATE BLOOD AND GET 
+              <h1 className="text-3xl font-bold text-white lg:text-4xl font-Poppins">DONATE BLOOD AND GET 
               <br/>
               <span > REAL BLESSINGS.</span></h1>
-              <div className='text-white text-2xl font-semibold my-2 font-Poppins'>
+              <div className='text-white text-xl font-semibold my-2 font-Poppins'>
               <p>Blood is the most precious gift that anyone can give to another person.
                 </p>
                 <p>

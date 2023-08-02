@@ -2,6 +2,7 @@ import React from 'react';
 import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { BiDonateBlood } from 'react-icons/bi';
 
+
 const AboutUs = () => {
     return (
         <div>
