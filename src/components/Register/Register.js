@@ -55,7 +55,7 @@ const Register = () => {
   }
   const saveUser = (name, email, photo) => {
     const user = { name, email, photo };
-    fetch(`http://localhost:5000/users`, {
+    fetch(`https://blood-donation-server-psi.vercel.app/users`, {
       method: "POST",
       headers: {
         'content-type': 'application/json'

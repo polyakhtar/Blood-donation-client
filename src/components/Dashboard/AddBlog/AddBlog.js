@@ -32,7 +32,7 @@ const navigate=useNavigate();
       userDisplayName,
       userPhotoURL
     }
-    fetch('http://localhost:5000/blogs',{
+    fetch('https://blood-donation-server-psi.vercel.app/blogs',{
       method:"POST",
       headers:{
         "content-type":"application/json"

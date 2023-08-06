@@ -15,14 +15,14 @@ const BlogDetails = () => {
   const [getComments, setGetComments] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/blogs/${id}`)
+    fetch(`https://blood-donation-server-psi.vercel.app/blogs/${id}`)
       .then(res => res.json())
       .then(data => {
         setBlogDetails(data);
       });
 
     const uniqueKey = Date.now();
-    fetch(`http://localhost:5000/comments/${id}?key=${uniqueKey}`)
+    fetch(`https://blood-donation-server-psi.vercel.app/comments/${id}?key=${uniqueKey}`)
       .then(res => res.json())
       .then(data => {
         const reversedComments = data.reverse();
@@ -48,7 +48,7 @@ const BlogDetails = () => {
       blogId: _id,
     };
 
-    fetch('http://localhost:5000/comments', {
+    fetch('https://blood-donation-server-psi.vercel.app/comments', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -59,7 +59,7 @@ const BlogDetails = () => {
       .then(data => {
         // After posting a comment, fetch the updated comments for this blog post
         const uniqueKey = Date.now();
-        fetch(`http://localhost:5000/comments/${id}?key=${uniqueKey}`)
+        fetch(`https://blood-donation-server-psi.vercel.app/comments/${id}?key=${uniqueKey}`)
           .then(res => res.json())
           .then(data => {
             const reversedComments = data.reverse();

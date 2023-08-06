@@ -15,7 +15,7 @@ const Checkout = ({ price }) => {
   const elements = useElements();
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://blood-donation-server-psi.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const Checkout = ({ price }) => {
         name: user?.displayName,
         photoURL: user?.photoURL,
       };
-      fetch('http://localhost:5000/payment', {
+      fetch('https://blood-donation-server-psi.vercel.app/payment', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'

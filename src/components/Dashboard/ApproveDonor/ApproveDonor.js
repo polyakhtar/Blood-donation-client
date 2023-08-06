@@ -22,7 +22,7 @@ const ApproveDonor = () => {
   }, [disabledButtons]);
 
   const fetchDonors = () => {
-    fetch('http://localhost:5000/donors')
+    fetch('https://blood-donation-server-psi.vercel.app/donors')
       .then((res) => res.json())
       .then((data) => {
         setDonors(data);
@@ -59,7 +59,7 @@ updatedDisabledButtons[index] = true;
 setDisabledButtons(updatedDisabledButtons);
 
     // Update the disabled buttons state after API call is successful
-    fetch('http://localhost:5000/approveddonor', {
+    fetch('https://blood-donation-server-psi.vercel.app/approveddonor', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

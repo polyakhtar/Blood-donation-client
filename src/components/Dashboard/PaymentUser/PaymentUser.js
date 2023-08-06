@@ -4,7 +4,7 @@ import { BiDonateBlood } from 'react-icons/bi';
 const PaymentUser = () => {
     const [paidUser,setPaidUser]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/payments')
+        fetch('https://blood-donation-server-psi.vercel.app/payments')
         .then(res=>res.json())
         .then(data=>{
             // console.log(data);

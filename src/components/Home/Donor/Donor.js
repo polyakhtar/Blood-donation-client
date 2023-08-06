@@ -8,7 +8,7 @@ const Donor = () => {
 
   const [approvedDonor,setApprovedDonor]=useState([]);
   useEffect(()=>{
-    fetch('http://localhost:5000/approveddonor')
+    fetch('https://blood-donation-server-psi.vercel.app/approveddonor')
     .then(res=>res.json())
     .then(data=>{
       setApprovedDonor(data)

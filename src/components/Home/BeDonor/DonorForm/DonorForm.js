@@ -20,7 +20,7 @@ const donor={
       photo,
       number
 };
-fetch('http://localhost:5000/donor',{
+fetch('https://blood-donation-server-psi.vercel.app/donor',{
   method:"POST",
   headers:{
     'content-type':'application/json'
